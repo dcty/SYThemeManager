@@ -241,22 +241,15 @@ static SYThemeManager *_sharedSYThemeManager = nil;
 
 - (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath forValue:(NSString *)value
 {
-    NSString *themeKey = [self themeKeyOfValue:value];
-    if (themeKey)
-    {
-        [self cacheView:view onKeyPath:keyPath forKey:themeKey];
-    }
-}
-
-- (void)cacheView:(UIView *)view onKeyPath:(NSString *)keyPath forKey:(NSString *)key
-{
-    @synchronized (_cacheViews)
+    NSString *key = [self themeKeyOfValue:value];
+    if (key)
     {
         NSMutableArray *array = [self arrayOfKey:key];
         @synchronized (array)
         {
             [array addWeakRefOfObject:view onKeyPath:keyPath];
         }
+
     }
 }
 
