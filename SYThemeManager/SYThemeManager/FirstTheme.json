@@ -1,0 +1,16 @@
+{
+    "bundle": "Main",
+    "color": {
+
+        "Content_BG_Color": "#FFFFFF",
+        "Content_Color": "#000000",
+        "Title_BG_Color": "#FFFFFF",
+        "Title_Color": "#000000"
+    },
+    "image": {
+        "Image_First": "image_chose_bg.png",
+        "Image_Second": "image_chose_up.png",
+        "Image_Test": "tata_replybg.png",
+        "Image_Test1": "tata_replybg1.png"
+    }
+}

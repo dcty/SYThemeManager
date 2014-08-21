@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22F6300C7B7237D8C03BC1E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F63ECF68CC65452F1102A4 /* CoreGraphics.framework */; };
+		22F63064AF158C6B471F5A23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F63C7392CF0A3E42FD0F1E /* Images.xcassets */; };
+		22F63274E067D795BA2480BF /* BIItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63B08C65310F8FF876902 /* BIItemManager.m */; };
+		22F632A1886D942A68353FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F638A48B8D01C4DF7A510F /* Foundation.framework */; };
+		22F6331038EFB09394FB8AF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F633131B4207EDB4CBF737 /* main.m */; };
+		22F633DB8AEB620E8A5D4E7A /* tata_replybg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63BBA20286370E4EB9562 /* tata_replybg@2x.png */; };
+		22F633EDA38B507E052C62A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F638A48B8D01C4DF7A510F /* Foundation.framework */; };
+		22F6355C105D914185EE743C /* tata_replybg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63C57CADEEA448DDDCBEE /* tata_replybg.png */; };
+		22F635C9DC6F7D9EE513E46E /* SYThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6348BCADB7DCA245A180A /* SYThemeManager.m */; };
+		22F636655CEBCDA42CE4E59A /* YYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6305CD593DFD2CFCAE361 /* YYAppDelegate.m */; };
+		22F63784DA6B53A39C1806AD /* BILibArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F635B8CC4DDE649011F293 /* BILibArg.m */; };
+		22F637E42640CE85CA10FDB3 /* StandardPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6375039696C731CACA75C /* StandardPaths.m */; };
+		22F637FA6431CF4A506443F7 /* image_chose_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63FA05B558596DCBD74EE /* image_chose_up.png */; };
+		22F638A7F0B5FF18E3FA52CE /* image_chose_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F636135D9FCDA67C609456 /* image_chose_bg@2x.png */; };
+		22F638AB3535C8998C60B69B /* image_chose_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63A9AD88E7764527CF29D /* image_chose_up@2x.png */; };
+		22F6397836889980FE8BBAA8 /* tata_replybg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63AC79535B4674D9E99E1 /* tata_replybg1.png */; };
+		22F639799689AC0221116347 /* BILibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F639463109E7B32DA886AF /* BILibUtils.m */; };
+		22F639E61EE52B20F82B6210 /* SecondTheme.json in Resources */ = {isa = PBXBuildFile; fileRef = 22F634B0E69A64B8C53EB814 /* SecondTheme.json */; };
+		22F63ABD91F0960595C036BF /* FirstTheme.json in Resources */ = {isa = PBXBuildFile; fileRef = 22F63C6839DF56D48C22D10F /* FirstTheme.json */; };
+		22F63AC7C95E2957FB625B3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F631637DC5D95390454595 /* XCTest.framework */; };
+		22F63BF5B9F750A1FA2D40EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22F63DBFF81BC4E382CEDCB8 /* InfoPlist.strings */; };
+		22F63BF6F89474E5A9103D3C /* BIItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63316D8092EA73E2223B8 /* BIItem.m */; };
+		22F63C9F8B2C24D944136ACA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F63FB5E94D1B2590A6A21B /* UIKit.framework */; };
+		22F63CD42FBE8F0E4B6F80BD /* SYThemeManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F637005C18C6C3B5E3E39C /* SYThemeManagerTests.m */; };
+		22F63D35B78268F10DE77D65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F63FB5E94D1B2590A6A21B /* UIKit.framework */; };
+		22F63DDF3532BA39BDB3CA42 /* image_chose_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63D1C976B48DBCFACA20C /* image_chose_bg.png */; };
+		22F63E27A1338CB80CF3C689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22F6395D57C1CDA2390DE638 /* InfoPlist.strings */; };
+		22F63EC809920EAE6C85E900 /* BILib.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63D5FB8C3082EA4747916 /* BILib.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22F6374F327EFF1ECCBF6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22F638CEDB5CA799024F938C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22F63AE82C1EC4FF7907441F;
+			remoteInfo = SYThemeManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22F6305CD593DFD2CFCAE361 /* YYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYAppDelegate.m; sourceTree = "<group>"; };
+		22F631637DC5D95390454595 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		22F631F2C42D5F5D0CFD5F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22F632220D6F8FA541D50C27 /* BILib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILib.h; sourceTree = "<group>"; };
+		22F632449CFAE8F2B4681A7D /* YYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYAppDelegate.h; sourceTree = "<group>"; };
+		22F633131B4207EDB4CBF737 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22F63316D8092EA73E2223B8 /* BIItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIItem.m; sourceTree = "<group>"; };
+		22F633282200A59D6DDEFBCB /* SYThemeManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYThemeManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F633A113356947E858D312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22F6348BCADB7DCA245A180A /* SYThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYThemeManager.m; sourceTree = "<group>"; };
+		22F634B0E69A64B8C53EB814 /* SecondTheme.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = SecondTheme.json; sourceTree = "<group>"; };
+		22F6355A0AB23569EF227375 /* SYThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYThemeManager.h; sourceTree = "<group>"; };
+		22F635B8CC4DDE649011F293 /* BILibArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILibArg.m; sourceTree = "<group>"; };
+		22F636135D9FCDA67C609456 /* image_chose_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_chose_bg@2x.png"; sourceTree = "<group>"; };
+		22F637005C18C6C3B5E3E39C /* SYThemeManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYThemeManagerTests.m; sourceTree = "<group>"; };
+		22F6375039696C731CACA75C /* StandardPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardPaths.m; sourceTree = "<group>"; };
+		22F6378C73A27499E0C00190 /* SYThemeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYThemeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F6383EBFE75EC7555A2094 /* StandardPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardPaths.h; sourceTree = "<group>"; };
+		22F638A48B8D01C4DF7A510F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22F638BA27CAE9C3264D0754 /* SYThemeManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SYThemeManager-Prefix.pch"; sourceTree = "<group>"; };
+		22F638DD90FE0C7640EDC757 /* BILibDummyStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibDummyStruct.h; sourceTree = "<group>"; };
+		22F639463109E7B32DA886AF /* BILibUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILibUtils.m; sourceTree = "<group>"; };
+		22F639C9F26A63F04C36FBCB /* BIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIItem.h; sourceTree = "<group>"; };
+		22F63A9AD88E7764527CF29D /* image_chose_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_chose_up@2x.png"; sourceTree = "<group>"; };
+		22F63AA4E7FF4879276F5562 /* BILibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibUtils.h; sourceTree = "<group>"; };
+		22F63AC79535B4674D9E99E1 /* tata_replybg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tata_replybg1.png; sourceTree = "<group>"; };
+		22F63B08C65310F8FF876902 /* BIItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIItemManager.m; sourceTree = "<group>"; };
+		22F63B1D1CFB7C43EDCEC933 /* BILibArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibArg.h; sourceTree = "<group>"; };
+		22F63B35468FBE7B1C3428B2 /* BIItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIItemManager.h; sourceTree = "<group>"; };
+		22F63BBA20286370E4EB9562 /* tata_replybg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tata_replybg@2x.png"; sourceTree = "<group>"; };
+		22F63C57CADEEA448DDDCBEE /* tata_replybg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tata_replybg.png; sourceTree = "<group>"; };
+		22F63C6839DF56D48C22D10F /* FirstTheme.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = FirstTheme.json; sourceTree = "<group>"; };
+		22F63C7392CF0A3E42FD0F1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22F63D1C976B48DBCFACA20C /* image_chose_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_chose_bg.png; sourceTree = "<group>"; };
+		22F63D5FB8C3082EA4747916 /* BILib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILib.m; sourceTree = "<group>"; };
+		22F63DC2545C34CAFBC425CA /* BILibExclusives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibExclusives.h; sourceTree = "<group>"; };
+		22F63DC75C69F9AA9BFE1705 /* SYThemeManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SYThemeManagerTests-Info.plist"; sourceTree = "<group>"; };
+		22F63ECF68CC65452F1102A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22F63EE57A25D9FA7BCB0DCA /* SYThemeManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SYThemeManager-Info.plist"; sourceTree = "<group>"; };
+		22F63FA05B558596DCBD74EE /* image_chose_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_chose_up.png; sourceTree = "<group>"; };
+		22F63FB5E94D1B2590A6A21B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22F63687AE25BF4F2DF0A91F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F63AC7C95E2957FB625B3B /* XCTest.framework in Frameworks */,
+				22F633EDA38B507E052C62A0 /* Foundation.framework in Frameworks */,
+				22F63C9F8B2C24D944136ACA /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F636A0980375F1F7003C37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F632A1886D942A68353FD7 /* Foundation.framework in Frameworks */,
+				22F6300C7B7237D8C03BC1E2 /* CoreGraphics.framework in Frameworks */,
+				22F63D35B78268F10DE77D65 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22F631B89BB51C5BE0C1CEE7 = {
+			isa = PBXGroup;
+			children = (
+				22F63C20517FD8DE5A363F8B /* Products */,
+				22F63E6BAFA7451A83C102C4 /* Frameworks */,
+				22F63939EDE5DC4D99A4E693 /* SYThemeManager */,
+				22F6321E94D4311026C069CE /* SYThemeManagerTests */,
+			);
+			sourceTree = "<group>";
+		};
+		22F6321E94D4311026C069CE /* SYThemeManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				22F63DC58855D9E73A244BC9 /* Supporting Files */,
+				22F637005C18C6C3B5E3E39C /* SYThemeManagerTests.m */,
+			);
+			path = SYThemeManagerTests;
+			sourceTree = "<group>";
+		};
+		22F639294F82AB594E5CFF25 /* StandardPaths */ = {
+			isa = PBXGroup;
+			children = (
+				22F6383EBFE75EC7555A2094 /* StandardPaths.h */,
+				22F6375039696C731CACA75C /* StandardPaths.m */,
+			);
+			path = StandardPaths;
+			sourceTree = "<group>";
+		};
+		22F63939EDE5DC4D99A4E693 /* SYThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				22F63FE91511773FC671C7D8 /* Supporting Files */,
+				22F632449CFAE8F2B4681A7D /* YYAppDelegate.h */,
+				22F6305CD593DFD2CFCAE361 /* YYAppDelegate.m */,
+				22F63C7392CF0A3E42FD0F1E /* Images.xcassets */,
+				22F6348BCADB7DCA245A180A /* SYThemeManager.m */,
+				22F6355A0AB23569EF227375 /* SYThemeManager.h */,
+				22F63991037498CBF757ACBB /* BlockInjection */,
+				22F63D1C976B48DBCFACA20C /* image_chose_bg.png */,
+				22F63A9AD88E7764527CF29D /* image_chose_up@2x.png */,
+				22F63FA05B558596DCBD74EE /* image_chose_up.png */,
+				22F636135D9FCDA67C609456 /* image_chose_bg@2x.png */,
+				22F63C57CADEEA448DDDCBEE /* tata_replybg.png */,
+				22F63BBA20286370E4EB9562 /* tata_replybg@2x.png */,
+				22F63AC79535B4674D9E99E1 /* tata_replybg1.png */,
+				22F63C6839DF56D48C22D10F /* FirstTheme.json */,
+				22F634B0E69A64B8C53EB814 /* SecondTheme.json */,
+				22F639294F82AB594E5CFF25 /* StandardPaths */,
+			);
+			path = SYThemeManager;
+			sourceTree = "<group>";
+		};
+		22F63991037498CBF757ACBB /* BlockInjection */ = {
+			isa = PBXGroup;
+			children = (
+				22F632220D6F8FA541D50C27 /* BILib.h */,
+				22F63D5FB8C3082EA4747916 /* BILib.m */,
+				22F639C9F26A63F04C36FBCB /* BIItem.h */,
+				22F63316D8092EA73E2223B8 /* BIItem.m */,
+				22F63B1D1CFB7C43EDCEC933 /* BILibArg.h */,
+				22F635B8CC4DDE649011F293 /* BILibArg.m */,
+				22F63AA4E7FF4879276F5562 /* BILibUtils.h */,
+				22F639463109E7B32DA886AF /* BILibUtils.m */,
+				22F63B35468FBE7B1C3428B2 /* BIItemManager.h */,
+				22F63B08C65310F8FF876902 /* BIItemManager.m */,
+				22F63DC2545C34CAFBC425CA /* BILibExclusives.h */,
+				22F638DD90FE0C7640EDC757 /* BILibDummyStruct.h */,
+			);
+			path = BlockInjection;
+			sourceTree = "<group>";
+		};
+		22F63C20517FD8DE5A363F8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22F6378C73A27499E0C00190 /* SYThemeManager.app */,
+				22F633282200A59D6DDEFBCB /* SYThemeManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22F63DC58855D9E73A244BC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22F63DC75C69F9AA9BFE1705 /* SYThemeManagerTests-Info.plist */,
+				22F63DBFF81BC4E382CEDCB8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22F63E6BAFA7451A83C102C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F638A48B8D01C4DF7A510F /* Foundation.framework */,
+				22F63ECF68CC65452F1102A4 /* CoreGraphics.framework */,
+				22F63FB5E94D1B2590A6A21B /* UIKit.framework */,
+				22F631637DC5D95390454595 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22F63FE91511773FC671C7D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22F63EE57A25D9FA7BCB0DCA /* SYThemeManager-Info.plist */,
+				22F6395D57C1CDA2390DE638 /* InfoPlist.strings */,
+				22F633131B4207EDB4CBF737 /* main.m */,
+				22F638BA27CAE9C3264D0754 /* SYThemeManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22F639EEB40421602A8E291D /* SYThemeManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F637C111429DA57AA60E87 /* Build configuration list for PBXNativeTarget "SYThemeManagerTests" */;
+			buildPhases = (
+				22F636CAAA6EBBE80B232FCE /* Sources */,
+				22F63687AE25BF4F2DF0A91F /* Frameworks */,
+				22F63CDF844567137FD6B9B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22F63740C26098CF5907DE88 /* PBXTargetDependency */,
+			);
+			name = SYThemeManagerTests;
+			productName = SYThemeManagerTests;
+			productReference = 22F633282200A59D6DDEFBCB /* SYThemeManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22F63AE82C1EC4FF7907441F /* SYThemeManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22F63FEF65BCD17755026122 /* Build configuration list for PBXNativeTarget "SYThemeManager" */;
+			buildPhases = (
+				22F63BCEA1DA74AB16939D39 /* Sources */,
+				22F636A0980375F1F7003C37 /* Frameworks */,
+				22F63AC430AFEE06F4729435 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SYThemeManager;
+			productName = SYThemeManager;
+			productReference = 22F6378C73A27499E0C00190 /* SYThemeManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22F638CEDB5CA799024F938C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = caicode;
+			};
+			buildConfigurationList = 22F63AA0C7D28962A5FA5A38 /* Build configuration list for PBXProject "SYThemeManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 22F631B89BB51C5BE0C1CEE7;
+			productRefGroup = 22F63C20517FD8DE5A363F8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22F63AE82C1EC4FF7907441F /* SYThemeManager */,
+				22F639EEB40421602A8E291D /* SYThemeManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22F63AC430AFEE06F4729435 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F63E27A1338CB80CF3C689 /* InfoPlist.strings in Resources */,
+				22F63064AF158C6B471F5A23 /* Images.xcassets in Resources */,
+				22F63DDF3532BA39BDB3CA42 /* image_chose_bg.png in Resources */,
+				22F638AB3535C8998C60B69B /* image_chose_up@2x.png in Resources */,
+				22F637FA6431CF4A506443F7 /* image_chose_up.png in Resources */,
+				22F638A7F0B5FF18E3FA52CE /* image_chose_bg@2x.png in Resources */,
+				22F6355C105D914185EE743C /* tata_replybg.png in Resources */,
+				22F633DB8AEB620E8A5D4E7A /* tata_replybg@2x.png in Resources */,
+				22F6397836889980FE8BBAA8 /* tata_replybg1.png in Resources */,
+				22F63ABD91F0960595C036BF /* FirstTheme.json in Resources */,
+				22F639E61EE52B20F82B6210 /* SecondTheme.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F63CDF844567137FD6B9B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F63BF5B9F750A1FA2D40EC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22F636CAAA6EBBE80B232FCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F63CD42FBE8F0E4B6F80BD /* SYThemeManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22F63BCEA1DA74AB16939D39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F6331038EFB09394FB8AF4 /* main.m in Sources */,
+				22F636655CEBCDA42CE4E59A /* YYAppDelegate.m in Sources */,
+				22F635C9DC6F7D9EE513E46E /* SYThemeManager.m in Sources */,
+				22F63EC809920EAE6C85E900 /* BILib.m in Sources */,
+				22F63BF6F89474E5A9103D3C /* BIItem.m in Sources */,
+				22F63784DA6B53A39C1806AD /* BILibArg.m in Sources */,
+				22F639799689AC0221116347 /* BILibUtils.m in Sources */,
+				22F63274E067D795BA2480BF /* BIItemManager.m in Sources */,
+				22F637E42640CE85CA10FDB3 /* StandardPaths.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22F63740C26098CF5907DE88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22F63AE82C1EC4FF7907441F /* SYThemeManager */;
+			targetProxy = 22F6374F327EFF1ECCBF6D8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22F6395D57C1CDA2390DE638 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22F633A113356947E858D312 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22F63DBFF81BC4E382CEDCB8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22F631F2C42D5F5D0CFD5F24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22F630112125C8D3EF7F9642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYThemeManager/SYThemeManager-Prefix.pch";
+				INFOPLIST_FILE = "SYThemeManagerTests/SYThemeManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		22F635AEDCA30EC6CE3C35CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYThemeManager/SYThemeManager-Prefix.pch";
+				INFOPLIST_FILE = "SYThemeManager/SYThemeManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		22F6362B50EBB0635E6F2770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22F6392E81B36D63963427C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		22F63CA97EE65B642F2C3AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYThemeManager/SYThemeManager-Prefix.pch";
+				INFOPLIST_FILE = "SYThemeManagerTests/SYThemeManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		22F63EE533BFEEE8CEC313A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SYThemeManager/SYThemeManager-Prefix.pch";
+				INFOPLIST_FILE = "SYThemeManager/SYThemeManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22F637C111429DA57AA60E87 /* Build configuration list for PBXNativeTarget "SYThemeManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F63CA97EE65B642F2C3AF5 /* Debug */,
+				22F630112125C8D3EF7F9642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22F63AA0C7D28962A5FA5A38 /* Build configuration list for PBXProject "SYThemeManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F6392E81B36D63963427C0 /* Debug */,
+				22F6362B50EBB0635E6F2770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22F63FEF65BCD17755026122 /* Build configuration list for PBXNativeTarget "SYThemeManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22F63EE533BFEEE8CEC313A8 /* Debug */,
+				22F635AEDCA30EC6CE3C35CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22F638CEDB5CA799024F938C /* Project object */;
+}
