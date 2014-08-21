@@ -54,6 +54,14 @@
     [segmentedControl insertSegmentWithTitle:@"主题2" atIndex:1 animated:NO];
     segmentedControl.center = self.window.center;
     segmentedControl.selectedSegmentIndex = 0;
+    if ([[SYThemeManager sharedSYThemeManager].themePath rangeOfString:@"First"].location != NSNotFound)
+    {
+        segmentedControl.selectedSegmentIndex = 0;
+    }
+    else
+    {
+        segmentedControl.selectedSegmentIndex = 1;
+    }
     [segmentedControl addTarget:self action:@selector(themeChanged:) forControlEvents:UIControlEventValueChanged];
     [self.window addSubview:segmentedControl];
 

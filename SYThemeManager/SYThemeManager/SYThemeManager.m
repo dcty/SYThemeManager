@@ -205,6 +205,8 @@ static SYThemeManager *_sharedSYThemeManager = nil;
     {
         _themePath = themePath;
     }
+    [[NSUserDefaults standardUserDefaults] setObject:_themePath forKey:SY_THEME_PATH];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
