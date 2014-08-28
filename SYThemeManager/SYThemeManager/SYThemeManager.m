@@ -8,6 +8,9 @@
 #import "SYThemeManager.h"
 #import "StandardPaths.h"
 #import "BILib.h"
+#import "UIButton+SYTheme.h"
+#import "UIImageView+SYTheme.h"
+#import "UIColor+SYTheme.h"
 
 #define SY_THEME_PATH  @"SY_THEME_PATH"
 
@@ -30,7 +33,6 @@
 *   @param  keyPath 路径
 */
 - (void)addWeakRefOfObject:(id)object onKeyPath:(NSString *)keyPath;
-
 
 /**
 *   @brief  添加一个带有keyPath的弱引用对象
@@ -61,13 +63,6 @@
 {
     return [self.ref methodSignatureForSelector:sel];
 }
-
-@end
-
-@interface SYThemeImageCache : NSCache
-- (void)cacheImage:(UIImage *)image forKey:(NSString *)key;
-
-+ (SYThemeImageCache *)sharedSYThemeImageCache;
 
 @end
 
@@ -178,12 +173,20 @@ static SYThemeManager *_sharedSYThemeManager = nil;
 - (void)registerInject
 {
     [BILib injectToClass:[UIView class] selector:@selector(setBackgroundColor:) postprocess:^(UIView *view, id value) {
-        [self addObserverForView:view onKeyPath:@"backgroundColor" forValue:value];
+        [self addObserverForView:view onKeyPath:THEME_BACKGROUNDCOLOR value:value];
     }];
 
-    [BILib injectToClass:[UILabel class] selector:@selector(setTextColor:) postprocess:^(UILabel *label, id value) {
-        [self addObserverForView:label onKeyPath:@"textColor" forValue:value];
+    [BILib injectToClassWithNames:@[@"UITextField",@"UITextView",@"UILabel"] methodNames:@[@"setFont:",@"setTextColor:"] postprocess:^(UIView *view,id value){
+        if ([value isKindOfClass:[UIFont class]])
+        {
+            [self addObserverForView:view onKeyPath:THEME_FONT value:value];
+        }
+        else if ([value isKindOfClass:[UIColor class]])
+        {
+            [self addObserverForView:view onKeyPath:THEME_TEXTCOLOR value:value];
+        }
     }];
+
 }
 
 - (void)addCustomUIInject:(void (^)(SYThemeManager *themeManager))block
@@ -239,32 +242,28 @@ static SYThemeManager *_sharedSYThemeManager = nil;
     return _themeValues[key];
 }
 
-- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath forValue:(NSString *)value
+- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath value:(id)value
 {
-    NSString *key = [self themeKeyOfValue:value];
-    if (key)
-    {
-        NSMutableArray *array = [self arrayOfKey:key];
-        @synchronized (array)
-        {
-            [array addWeakRefOfObject:view onKeyPath:keyPath];
-        }
-
-    }
+    [self addObserverForView:view onKeyPath:keyPath value:value controlState:(UIControlState) -1];
 }
 
-- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath forValue:(NSString *)value controlState:(UIControlState)state
+
+- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath value:(id)value controlState:(UIControlState)state
 {
     @synchronized (_cacheViews)
     {
         NSString *key = [self themeKeyOfValue:value];
-        NSMutableArray *array = [self arrayOfKey:key];
-        @synchronized (array)
+        if (key)
         {
-            [array addWeakRefOfObject:view onKeyPath:keyPath controlState:state];
+            NSMutableArray *array = [self arrayOfKey:key];
+            @synchronized (array)
+            {
+                [array addWeakRefOfObject:view onKeyPath:keyPath controlState:state];
+            }
         }
     }
 }
+
 
 - (void)removeInvalidView
 {
@@ -314,7 +313,7 @@ static SYThemeManager *_sharedSYThemeManager = nil;
             if ([key isEqualToString:@"color"])
             {
                 [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *themeKey, NSString *themeValue, BOOL *stop1) {
-                    [_themeValues setValue:[self colorWithHexString:themeValue] forKey:themeKey];
+                    [_themeValues setValue:[UIColor colorWithHexString:themeValue] forKey:themeKey];
                 }];
             }
             else if ([key isEqualToString:@"image"])
@@ -326,6 +325,22 @@ static SYThemeManager *_sharedSYThemeManager = nil;
                         imagePath = [[NSFileManager defaultManager] pathForResource:themeValue];
                     }
                     [_themeValues setValue:imagePath forKey:themeKey];
+                }];
+            }
+            else if ([key isEqualToString:@"font"])
+            {
+                [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *themeKey, NSDictionary *fontDict, BOOL *stop1) {
+                    BOOL bold = [fontDict[@"FontStyle"] boolValue];
+                    int fontSize = [fontDict[@"FontSize"] intValue];
+                    UIFont *font = nil;
+                    if (bold)
+                    {
+                        font = [UIFont boldSystemFontOfSize:fontSize];
+                    }
+                    else{
+                        font = [UIFont systemFontOfSize:fontSize];
+                    }
+                    [_themeValues setValue:font forKey:themeKey];
                 }];
             }
         }];
@@ -381,11 +396,11 @@ static SYThemeManager *_sharedSYThemeManager = nil;
 - (void)handleImageViewWithWeakRef:(WeakRef *)weak andKey:(NSString *)key
 {
     UIImageView *imageView = (UIImageView *) weak.ref;
-    if ([weak.keyPath isEqualToString:@"image"])
+    if ([weak.keyPath isEqualToString:THEME_IMAGE])
     {
         [imageView setImageWithName:[self themeValueForKey:key] stretchLeft:imageView.stretchLeft stretchTop:imageView.stretchTop];
     }
-    else if ([weak.keyPath isEqualToString:@"backgroundColor"])
+    else if ([weak.keyPath isEqualToString:THEME_BACKGROUNDCOLOR])
     {
         [self handleCommonViewWithWeakRef:weak andKey:key];
     }
@@ -394,275 +409,23 @@ static SYThemeManager *_sharedSYThemeManager = nil;
 - (void)handleButtonWithWeakRef:(WeakRef *)weak andKey:(NSString *)key
 {
     UIButton *button = (UIButton *) weak.ref;
-    if ([weak.keyPath isEqualToString:@"image"])
+    if ([weak.keyPath isEqualToString:THEME_IMAGE])
     {
         [button setImageWithName:[self themeValueForKey:key] forState:weak.controlState];
     }
-    else if ([weak.keyPath isEqualToString:@"setBackgroundImage"])
+    else if ([weak.keyPath isEqualToString:THEME_BACKGROUNDIMAGE])
     {
         NSValue *value = (button.resizeValueDict)[@(weak.controlState)];
         CGSize size = value.CGSizeValue;
         [button setBackgroundImageWithName:[self themeValueForKey:key] stretchLeft:(NSInteger) size.height stretchTop:(NSInteger) size.width forState:weak.controlState];
     }
-    else if ([weak.keyPath isEqualToString:@"backgroundColor"])
+    else if ([weak.keyPath isEqualToString:THEME_BACKGROUNDCOLOR])
     {
         [self handleCommonViewWithWeakRef:weak andKey:key];
     }
-}
-
-- (UIColor *)colorWithHexString:(id)hexString
-{
-    if (![hexString isKindOfClass:[NSString class]] || [hexString length] == 0)
+    else if ([weak.keyPath isEqualToString:THEME_BUTTON_TITLECOLOR])
     {
-        return [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
-    }
-
-    const char *s = [hexString cStringUsingEncoding:NSASCIIStringEncoding];
-    if (*s == '#')
-    {
-        ++s;
-    }
-    unsigned long long value = (unsigned long long int) strtoll(s, nil, 16);
-    int r, g, b, a;
-    switch (strlen(s))
-    {
-        case 2:
-        {
-            // xx
-            r = g = b = (int) value;
-            a = 255;
-            break;
-        }
-        case 3:
-        {
-            // RGB
-            r = (int) ((value & 0xf00) >> 8);
-            g = (int) ((value & 0x0f0) >> 4);
-            b = (int) ((value & 0x00f) >> 0);
-            r = r * 16 + r;
-            g = g * 16 + g;
-            b = b * 16 + b;
-            a = 255;
-            break;
-        }
-        case 6:
-        {
-            // RRGGBB
-            r = (int) ((value & 0xff0000) >> 16);
-            g = (int) ((value & 0x00ff00) >> 8);
-            b = (int) ((value & 0x0000ff) >> 0);
-            a = 255;
-            break;
-        }
-        default:
-        {
-            // RRGGBBAA
-            r = (int) ((value & 0xff000000) >> 24);
-            g = (int) ((value & 0x00ff0000) >> 16);
-            b = (int) ((value & 0x0000ff00) >> 8);
-            a = (int) ((value & 0x000000ff) >> 0);
-            break;
-        }
-    }
-    return [UIColor colorWithRed:r / 255.0f green:g / 255.0f blue:b / 255.0f alpha:a / 255.0f];
-}
-
-
-@end
-
-@implementation UIImageView (SYTheme)
-
-static const char STRETCH_LEFT;
-static const char STRETCH_TOP;
-
-- (NSInteger)stretchLeft
-{
-    return [objc_getAssociatedObject(self, &STRETCH_LEFT) integerValue];
-}
-
-- (void)setStretchLeft:(NSInteger)stretchLeft
-{
-    objc_setAssociatedObject(self, &STRETCH_LEFT, @(stretchLeft), OBJC_ASSOCIATION_RETAIN);
-}
-
-- (NSInteger)stretchTop
-{
-    return [objc_getAssociatedObject(self, &STRETCH_TOP) integerValue];
-}
-
-- (void)setStretchTop:(NSInteger)stretchTop
-{
-    objc_setAssociatedObject(self, &STRETCH_TOP, @(stretchTop), OBJC_ASSOCIATION_RETAIN);
-}
-
-
-- (void)setImageWithName:(NSString *)imageName
-{
-    [self setImageWithName:imageName cache:YES];
-}
-
-- (void)setImageWithName:(NSString *)imageName cache:(BOOL)cache
-{
-    [self setImageWithName:imageName stretchLeft:0 stretchTop:0 cache:cache];
-}
-
-
-- (void)setImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue
-{
-    [self setImageWithName:imageName stretchLeft:leftValue stretchTop:topValue cache:YES];
-}
-
-
-- (void)setImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue cache:(BOOL)cache
-{
-    UIImage *image = [[SYThemeImageCache sharedSYThemeImageCache] objectForKey:imageName];
-    if (!image)
-    {
-        image = [[UIImage alloc] initWithContentsOfFile:imageName];
-        if (cache)
-        {
-            [[SYThemeImageCache sharedSYThemeImageCache] cacheImage:image forKey:imageName];
-        }
-    }
-    [[SYThemeManager sharedSYThemeManager] addObserverForView:self onKeyPath:@"image" forValue:imageName];
-    if (leftValue || topValue)
-    {
-        self.stretchLeft = leftValue;
-        self.stretchTop = topValue;
-        self.image = [image stretchableImageWithLeftCapWidth:leftValue topCapHeight:topValue];
-    }
-    else
-    {
-        self.image = image;
+        [button theme_setTitleColor:[self themeValueForKey:key] forState:weak.controlState];
     }
 }
-
-
-@end
-
-@implementation UIButton (SYTheme)
-
-
-static const char RESIZE_VALUES_DICT;
-
-- (NSMutableDictionary *)resizeValueDict
-{
-    NSMutableDictionary *dictionary = objc_getAssociatedObject(self, &RESIZE_VALUES_DICT);
-    if (!dictionary)
-    {
-        NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
-        [self setResizeValueDict:newDict];
-        dictionary = newDict;
-    }
-    return dictionary;
-}
-
-- (void)setResizeValueDict:(NSMutableDictionary *)resizeValueDict
-{
-    objc_setAssociatedObject(self, &RESIZE_VALUES_DICT, resizeValueDict, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-
-- (void)setImageWithName:(NSString *)imageName forState:(UIControlState)state
-{
-    [self setImageWithName:imageName forState:state cache:YES];
-}
-
-- (void)setImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache
-{
-    dispatch_async([SYThemeManager sharedSYThemeManager].syThemeImageQueue, ^{
-        UIImage *image = [[SYThemeImageCache sharedSYThemeImageCache] objectForKey:imageName];
-        if (!image)
-        {
-            image = [[UIImage alloc] initWithContentsOfFile:imageName];
-            if (cache)
-            {
-                [[SYThemeImageCache sharedSYThemeImageCache] cacheImage:image forKey:imageName];
-            }
-        }
-        if (image)
-        {
-            [[SYThemeManager sharedSYThemeManager] addObserverForView:self onKeyPath:@"image" forValue:imageName controlState:state];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setImage:image forState:state];
-            });
-        }
-    });
-
-}
-
-- (void)setBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state
-{
-    [self setBackgroundImageWithName:imageName stretchLeft:0 stretchTop:0 forState:state cache:YES];
-}
-
-- (void)setBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache
-{
-    [self setBackgroundImageWithName:imageName stretchLeft:0 stretchTop:0 forState:state cache:cache];
-}
-
-- (void)setResizeCenterBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state
-{
-    [self setResizeCenterBackgroundImageWithName:imageName forState:state cache:YES];
-}
-
-- (void)setResizeCenterBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache
-{
-    dispatch_async([SYThemeManager sharedSYThemeManager].syThemeImageQueue, ^{
-        UIImage *image = [[SYThemeImageCache sharedSYThemeImageCache] objectForKey:imageName];
-        if (!image)
-        {
-            image = [[UIImage alloc] initWithContentsOfFile:imageName];
-            if (cache)
-            {
-                [[SYThemeImageCache sharedSYThemeImageCache] cacheImage:image forKey:imageName];
-            }
-        }
-        CGSize imageSize = image.size;
-        CGFloat centerX = imageSize.width / 2;
-        CGFloat centerY = imageSize.height / 2;
-        [self setBackgroundImageWithName:imageName stretchLeft:(NSInteger) centerX stretchTop:(NSInteger) centerY forState:state cache:cache];
-    });
-}
-
-- (void)setBackgroundImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue forState:(UIControlState)state
-{
-    [self setBackgroundImageWithName:imageName stretchLeft:leftValue stretchTop:topValue forState:state cache:YES];
-}
-
-
-- (void)setBackgroundImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue forState:(UIControlState)state cache:(BOOL)cache
-{
-    dispatch_async([SYThemeManager sharedSYThemeManager].syThemeImageQueue, ^{
-        UIImage *image = [[SYThemeImageCache sharedSYThemeImageCache] objectForKey:imageName];
-        if (!image)
-        {
-            image = [[UIImage alloc] initWithContentsOfFile:imageName];
-            if (cache)
-            {
-                [[SYThemeImageCache sharedSYThemeImageCache] cacheImage:image forKey:imageName];
-            }
-        }
-        if (image)
-        {
-            [[SYThemeManager sharedSYThemeManager] addObserverForView:self onKeyPath:@"setBackgroundImage" forValue:imageName controlState:state];
-            UIImage *finalImage = image;
-            if (leftValue || topValue)
-            {
-                NSValue *value = (self.resizeValueDict)[@(state)];
-                if (!value)
-                {
-                    value = [NSValue valueWithCGSize:CGSizeMake(leftValue, topValue)];
-                    (self.resizeValueDict)[@(state)] = value;
-                }
-                finalImage = [image stretchableImageWithLeftCapWidth:leftValue topCapHeight:topValue];
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setBackgroundImage:finalImage forState:state];
-            });
-        }
-    });
-}
-
-
 @end

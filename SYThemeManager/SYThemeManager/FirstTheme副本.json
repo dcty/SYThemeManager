@@ -1,0 +1,24 @@
+{
+    "bundle": "主题名字",
+    "color": {
+        //颜色给十六进制的值
+        "通用_Color":"#FFFFFF",
+        "模块_通用_Color": "#FFFFFF",
+        "模块_控件名称_Color": "#FFFFFF"
+    },
+    "image": {
+        //给对应的切片的名字
+        "通用_Image": "image_chose_bg.png",
+        "模块_通用_Image": "image_chose_bg.png",
+        "模块_控件名称_Image": "image_chose_bg.png"
+    },
+    "font":{
+        //字体大小请按照320*480的分辨率来给
+        //FontStyle 0 正常 1 粗体
+        "通用_Font":{"FontStyle":0,"FontSize":15},
+        "模块_通用_Font":{"FontStyle":0,"FontSize":15},
+        "模块_控件名称_Font":{"FontStyle":0,"FontSize":15}
+    },
+}
+
+

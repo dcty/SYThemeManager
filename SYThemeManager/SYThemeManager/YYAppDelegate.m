@@ -10,6 +10,8 @@
 #import "SYThemeManager.h"
 #import "BILib.h"
 #import "StandardPaths.h"
+#import "UIImageView+SYTheme.h"
+#import "UIButton+SYTheme.h"
 
 @implementation YYAppDelegate
 
@@ -25,6 +27,7 @@
     titleLabel.text = @"我是标题";
     titleLabel.backgroundColor = SYThemeValueForKey(Title_BG_Color);
     titleLabel.textColor = SYThemeValueForKey(Title_Color);
+    titleLabel.font = SYThemeFont(FirstFont);
     [self.window addSubview:titleLabel];
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 200, 20)];
     contentLabel.text = @"我是内容";
@@ -47,6 +50,9 @@
     UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 80, 30)];
     [button2 setResizeCenterBackgroundImageWithName:SYThemeValueForKey(Image_Test) forState:UIControlStateNormal];
     [button2 setBackgroundImageWithName:SYThemeValueForKey(Image_Test1) stretchLeft:30 stretchTop:20 forState:UIControlStateHighlighted];
+    [button2 setTitle:@"test" forState:UIControlStateNormal];
+    [button2 theme_setTitleColor:SYThemeValueForKey(Title_Color) forState:UIControlStateNormal];
+    [button2 theme_setTitleColor:SYThemeValueForKey(Title_BG_Color) forState:UIControlStateHighlighted];
     [self.window addSubview:button2];
 
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, 110, 100, 30)];
@@ -67,7 +73,7 @@
 
     [[SYThemeManager sharedSYThemeManager] addCustomUIInject:^(SYThemeManager *themeManager) {
         [BILib injectToClass:[UISegmentedControl class] selector:@selector(setTintColor:) postprocess:^(id sender, id value) {
-            [themeManager addObserverForView:sender onKeyPath:@"tintColor" forValue:value];
+            [themeManager addObserverForView:sender onKeyPath:@"tintColor" value:value];
         }];
     }];
 

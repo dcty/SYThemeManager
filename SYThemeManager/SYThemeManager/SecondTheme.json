@@ -11,5 +11,11 @@
         "Image_Second": "image_chose_bg.png",
         "Image_Test": "tata_replybg1.png",
         "Image_Test1": "tata_replybg.png"
+    },
+    "font":{
+        "FirstFont":{
+            "FontStyle":"1",
+            "FontSize":20
+        }
     }
 }

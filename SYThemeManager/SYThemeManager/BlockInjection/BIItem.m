@@ -57,7 +57,8 @@
 
 - (void)dealloc
 {
-  if (self.pResult) {
+    NSLog(@"%s", sel_getName(_cmd));
+    if (self.pResult) {
     free(self.pResult);
     self.pResult = NULL;
   }

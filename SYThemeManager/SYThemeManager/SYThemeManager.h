@@ -12,14 +12,30 @@
 #define Image_Second @"Image_Second"
 #define Image_Test @"Image_Test"
 #define Image_Test1 @"Image_Test1"
+#define FirstFont @"FirstFont"
+
+#define THEME_TEXTCOLOR @"textColor"
+#define THEME_BACKGROUNDCOLOR @"backgroundColor"
+#define THEME_IMAGE @"image"
+#define THEME_BACKGROUNDIMAGE @"BackgroundImage"
+#define THEME_BUTTON_TITLECOLOR @"ButtonTitleColor"
+#define THEME_FONT @"font"
 
 #define SYThemeDidChanged @"SYThemeDidChanged"
 
 //通过 key 获取 值
 #define SYThemeValueForKey(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
+#define SYThemeColor(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
+#define SYThemeImage(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
+#define SYThemeFont(key)  [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
 
 #import <Foundation/Foundation.h>
 
+@interface SYThemeImageCache : NSCache
+- (void)cacheImage:(UIImage *)image forKey:(NSString *)key;
+
++ (SYThemeImageCache *)sharedSYThemeImageCache;
+@end
 
 @interface SYThemeManager : NSObject
 
@@ -35,7 +51,7 @@
 *   @param  keyPath 修改的路径   如 textColor，backgroundColor等
 *   @param  value   keyPath的值，内部会通过value找到themeKey
 */
-- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath forValue:(NSString *)value;
+- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath value:(id)value;
 
 /**
 *   @brief 监听view，然后根据路径和值来修改 这里的view是弱引用（weak），不用担心crash的问题
@@ -44,7 +60,7 @@
 *   @param  value   keyPath的值，内部会通过value找到themeKey
 *   @param  state   状态  如 UIButton
 */
-- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath forValue:(NSString *)value controlState:(UIControlState)state;
+- (void)addObserverForView:(UIView *)view onKeyPath:(NSString *)keyPath value:(id)value controlState:(UIControlState)state;
 
 /**
 *   @brief  清理无效的视图
@@ -59,78 +75,5 @@
 @property(copy, nonatomic) NSString *themePath;
 
 @property(nonatomic, strong) dispatch_queue_t syThemeImageQueue;
-@end
 
-@interface UIImageView (SYTheme)
-
-@property(assign, nonatomic) NSInteger stretchLeft;     //image 拉伸的参数
-@property(assign, nonatomic) NSInteger stretchTop;      //image 拉伸的参数
-
-/**
-*   @brief  通过设置图片名来给UIImageView设置image   默认开启图片缓存，下同
-*   @param  imageName   图片名字    这个值，必须用上面定义的宏来获取
-*/
-- (void)setImageWithName:(NSString *)imageName;
-
-/**
-*   @brief  通过设置图片名来给UIImageView设置image
-*   @param  imageName   图片名字    这个值，必须用上面定义的宏来获取
-*   @param  cache       是否使用图片缓存
-*/
-- (void)setImageWithName:(NSString *)imageName cache:(BOOL)cache;
-
-/**
-*   @brief  通过设置图片名来给UIImageView设置image
-*   @param  imageName   图片名字    这个值，必须用上面定义的宏来获取
-*   @param  leftValue   图片拉伸参数
-*   @param  topValue    图片拉伸参数
-*/
-- (void)setImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue;
-
-- (void)setImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue cache:(BOOL)cache;
-
-@end
-
-@interface UIButton (SYTheme)
-
-@property(strong, nonatomic) NSMutableDictionary *resizeValueDict;
-
-/**
-*   @brief  通过设置图片名来给UIButton设置image
-*   @param  图片名字    这个值，必须用上面定义的宏来获取
-*   @param  state  UIButton的state
-*/
-- (void)setImageWithName:(NSString *)imageName forState:(UIControlState)state;
-
-
-- (void)setImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache;
-
-/**
-*   @brief  通过设置图片名来给UIButton设置BackgroundImage
-*   @param  图片名字    这个值，必须用上面定义的宏来获取
-*   @param  state  UIButton的state
-*/
-- (void)setBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state;
-
-- (void)setBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache;
-
-/**
-*   @brief  通过设置图片名来给UIButton设置BackgroundImage已image的中心拉伸
-*   @param  图片名字    这个值，必须用上面定义的宏来获取
-*   @param  state  UIButton的state
-*/
-- (void)setResizeCenterBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state;
-
-- (void)setResizeCenterBackgroundImageWithName:(NSString *)imageName forState:(UIControlState)state cache:(BOOL)cache;
-
-/**
-*   @brief  通过设置图片名来给UIButton设置BackgroundImage
-*   @param  图片名字    这个值，必须用上面定义的宏来获取
-*   @param  leftValue   图片拉伸参数
-*   @param  topValue    图片拉伸参数
-*   @param  state  UIButton的state
-*/
-- (void)setBackgroundImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue forState:(UIControlState)state;
-
-- (void)setBackgroundImageWithName:(NSString *)imageName stretchLeft:(NSInteger)leftValue stretchTop:(NSInteger)topValue forState:(UIControlState)state cache:(BOOL)cache;
 @end

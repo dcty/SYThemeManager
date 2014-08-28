@@ -16,12 +16,15 @@
 		22F633EDA38B507E052C62A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F638A48B8D01C4DF7A510F /* Foundation.framework */; };
 		22F6355C105D914185EE743C /* tata_replybg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63C57CADEEA448DDDCBEE /* tata_replybg.png */; };
 		22F635C9DC6F7D9EE513E46E /* SYThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6348BCADB7DCA245A180A /* SYThemeManager.m */; };
+		22F635D3CAAC109D338FB9CE /* UIButton+SYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63F31F68D90D1D67114B2 /* UIButton+SYTheme.m */; };
+		22F636494E8CAE014B172AE8 /* UIImageView+SYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63819633EB02284A461D3 /* UIImageView+SYTheme.m */; };
 		22F636655CEBCDA42CE4E59A /* YYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6305CD593DFD2CFCAE361 /* YYAppDelegate.m */; };
 		22F63784DA6B53A39C1806AD /* BILibArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F635B8CC4DDE649011F293 /* BILibArg.m */; };
 		22F637E42640CE85CA10FDB3 /* StandardPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F6375039696C731CACA75C /* StandardPaths.m */; };
 		22F637FA6431CF4A506443F7 /* image_chose_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63FA05B558596DCBD74EE /* image_chose_up.png */; };
 		22F638A7F0B5FF18E3FA52CE /* image_chose_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F636135D9FCDA67C609456 /* image_chose_bg@2x.png */; };
 		22F638AB3535C8998C60B69B /* image_chose_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63A9AD88E7764527CF29D /* image_chose_up@2x.png */; };
+		22F638E88D2FA38AE9D2575F /* UIColor+SYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63B0B78AA022CE251892D /* UIColor+SYTheme.m */; };
 		22F6397836889980FE8BBAA8 /* tata_replybg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63AC79535B4674D9E99E1 /* tata_replybg1.png */; };
 		22F639799689AC0221116347 /* BILibUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F639463109E7B32DA886AF /* BILibUtils.m */; };
 		22F639E61EE52B20F82B6210 /* SecondTheme.json in Resources */ = {isa = PBXBuildFile; fileRef = 22F634B0E69A64B8C53EB814 /* SecondTheme.json */; };
@@ -35,6 +38,7 @@
 		22F63DDF3532BA39BDB3CA42 /* image_chose_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F63D1C976B48DBCFACA20C /* image_chose_bg.png */; };
 		22F63E27A1338CB80CF3C689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22F6395D57C1CDA2390DE638 /* InfoPlist.strings */; };
 		22F63EC809920EAE6C85E900 /* BILib.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63D5FB8C3082EA4747916 /* BILib.m */; };
+		2C81636619ADC46C003274A5 /* FirstTheme副本.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C81636519ADC46C003274A5 /* FirstTheme副本.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +63,14 @@
 		22F633A113356947E858D312 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22F6348BCADB7DCA245A180A /* SYThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYThemeManager.m; sourceTree = "<group>"; };
 		22F634B0E69A64B8C53EB814 /* SecondTheme.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = SecondTheme.json; sourceTree = "<group>"; };
+		22F634EE5C3FD6CB57494D8D /* UIButton+SYTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SYTheme.h"; sourceTree = "<group>"; };
 		22F6355A0AB23569EF227375 /* SYThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYThemeManager.h; sourceTree = "<group>"; };
 		22F635B8CC4DDE649011F293 /* BILibArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILibArg.m; sourceTree = "<group>"; };
 		22F636135D9FCDA67C609456 /* image_chose_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_chose_bg@2x.png"; sourceTree = "<group>"; };
 		22F637005C18C6C3B5E3E39C /* SYThemeManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYThemeManagerTests.m; sourceTree = "<group>"; };
 		22F6375039696C731CACA75C /* StandardPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardPaths.m; sourceTree = "<group>"; };
 		22F6378C73A27499E0C00190 /* SYThemeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYThemeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F63819633EB02284A461D3 /* UIImageView+SYTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SYTheme.m"; sourceTree = "<group>"; };
 		22F6383EBFE75EC7555A2094 /* StandardPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardPaths.h; sourceTree = "<group>"; };
 		22F638A48B8D01C4DF7A510F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22F638BA27CAE9C3264D0754 /* SYThemeManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SYThemeManager-Prefix.pch"; sourceTree = "<group>"; };
@@ -75,9 +81,11 @@
 		22F63AA4E7FF4879276F5562 /* BILibUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibUtils.h; sourceTree = "<group>"; };
 		22F63AC79535B4674D9E99E1 /* tata_replybg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tata_replybg1.png; sourceTree = "<group>"; };
 		22F63B08C65310F8FF876902 /* BIItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIItemManager.m; sourceTree = "<group>"; };
+		22F63B0B78AA022CE251892D /* UIColor+SYTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SYTheme.m"; sourceTree = "<group>"; };
 		22F63B1D1CFB7C43EDCEC933 /* BILibArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibArg.h; sourceTree = "<group>"; };
 		22F63B35468FBE7B1C3428B2 /* BIItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIItemManager.h; sourceTree = "<group>"; };
 		22F63BBA20286370E4EB9562 /* tata_replybg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tata_replybg@2x.png"; sourceTree = "<group>"; };
+		22F63C22BA3BEFFBF5BDBE64 /* UIImageView+SYTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SYTheme.h"; sourceTree = "<group>"; };
 		22F63C57CADEEA448DDDCBEE /* tata_replybg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tata_replybg.png; sourceTree = "<group>"; };
 		22F63C6839DF56D48C22D10F /* FirstTheme.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = FirstTheme.json; sourceTree = "<group>"; };
 		22F63C7392CF0A3E42FD0F1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -85,10 +93,13 @@
 		22F63D5FB8C3082EA4747916 /* BILib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BILib.m; sourceTree = "<group>"; };
 		22F63DC2545C34CAFBC425CA /* BILibExclusives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BILibExclusives.h; sourceTree = "<group>"; };
 		22F63DC75C69F9AA9BFE1705 /* SYThemeManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SYThemeManagerTests-Info.plist"; sourceTree = "<group>"; };
+		22F63DD309F6653232271F99 /* UIColor+SYTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SYTheme.h"; sourceTree = "<group>"; };
 		22F63ECF68CC65452F1102A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22F63EE57A25D9FA7BCB0DCA /* SYThemeManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "SYThemeManager-Info.plist"; sourceTree = "<group>"; };
+		22F63F31F68D90D1D67114B2 /* UIButton+SYTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SYTheme.m"; sourceTree = "<group>"; };
 		22F63FA05B558596DCBD74EE /* image_chose_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_chose_up.png; sourceTree = "<group>"; };
 		22F63FB5E94D1B2590A6A21B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C81636519ADC46C003274A5 /* FirstTheme副本.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FirstTheme副本.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +157,7 @@
 		22F63939EDE5DC4D99A4E693 /* SYThemeManager */ = {
 			isa = PBXGroup;
 			children = (
+				2C81636519ADC46C003274A5 /* FirstTheme副本.json */,
 				22F63FE91511773FC671C7D8 /* Supporting Files */,
 				22F632449CFAE8F2B4681A7D /* YYAppDelegate.h */,
 				22F6305CD593DFD2CFCAE361 /* YYAppDelegate.m */,
@@ -163,6 +175,7 @@
 				22F63C6839DF56D48C22D10F /* FirstTheme.json */,
 				22F634B0E69A64B8C53EB814 /* SecondTheme.json */,
 				22F639294F82AB594E5CFF25 /* StandardPaths */,
+				22F63D2A3449EBBF6C4B0128 /* SYThemeManagerCategory */,
 			);
 			path = SYThemeManager;
 			sourceTree = "<group>";
@@ -193,6 +206,19 @@
 				22F633282200A59D6DDEFBCB /* SYThemeManagerTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		22F63D2A3449EBBF6C4B0128 /* SYThemeManagerCategory */ = {
+			isa = PBXGroup;
+			children = (
+				22F63F31F68D90D1D67114B2 /* UIButton+SYTheme.m */,
+				22F634EE5C3FD6CB57494D8D /* UIButton+SYTheme.h */,
+				22F63819633EB02284A461D3 /* UIImageView+SYTheme.m */,
+				22F63C22BA3BEFFBF5BDBE64 /* UIImageView+SYTheme.h */,
+				22F63B0B78AA022CE251892D /* UIColor+SYTheme.m */,
+				22F63DD309F6653232271F99 /* UIColor+SYTheme.h */,
+			);
+			path = SYThemeManagerCategory;
 			sourceTree = "<group>";
 		};
 		22F63DC58855D9E73A244BC9 /* Supporting Files */ = {
@@ -306,6 +332,7 @@
 				22F6397836889980FE8BBAA8 /* tata_replybg1.png in Resources */,
 				22F63ABD91F0960595C036BF /* FirstTheme.json in Resources */,
 				22F639E61EE52B20F82B6210 /* SecondTheme.json in Resources */,
+				2C81636619ADC46C003274A5 /* FirstTheme副本.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +368,9 @@
 				22F639799689AC0221116347 /* BILibUtils.m in Sources */,
 				22F63274E067D795BA2480BF /* BIItemManager.m in Sources */,
 				22F637E42640CE85CA10FDB3 /* StandardPaths.m in Sources */,
+				22F635D3CAAC109D338FB9CE /* UIButton+SYTheme.m in Sources */,
+				22F636494E8CAE014B172AE8 /* UIImageView+SYTheme.m in Sources */,
+				22F638E88D2FA38AE9D2575F /* UIColor+SYTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +540,7 @@
 				22F630112125C8D3EF7F9642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22F63AA0C7D28962A5FA5A38 /* Build configuration list for PBXProject "SYThemeManager" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +558,7 @@
 				22F635AEDCA30EC6CE3C35CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
