@@ -176,7 +176,7 @@ static SYThemeManager *_sharedSYThemeManager = nil;
         [self addObserverForView:view onKeyPath:THEME_BACKGROUNDCOLOR value:value];
     }];
 
-    [BILib injectToClassWithNames:@[@"UITextField",@"UITextView",@"UILabel"] methodNames:@[@"setFont:",@"setTextColor:"] postprocess:^(UIView *view,id value){
+    [BILib injectToClassWithNames:@[@"UITextField", @"UITextView", @"UILabel"] methodNames:@[@"setFont:", @"setTextColor:"] postprocess:^(UIView *view, id value) {
         if ([value isKindOfClass:[UIFont class]])
         {
             [self addObserverForView:view onKeyPath:THEME_FONT value:value];
@@ -186,7 +186,6 @@ static SYThemeManager *_sharedSYThemeManager = nil;
             [self addObserverForView:view onKeyPath:THEME_TEXTCOLOR value:value];
         }
     }];
-
 }
 
 - (void)addCustomUIInject:(void (^)(SYThemeManager *themeManager))block
@@ -337,7 +336,8 @@ static SYThemeManager *_sharedSYThemeManager = nil;
                     {
                         font = [UIFont boldSystemFontOfSize:fontSize];
                     }
-                    else{
+                    else
+                    {
                         font = [UIFont systemFontOfSize:fontSize];
                     }
                     [_themeValues setValue:font forKey:themeKey];

@@ -25,34 +25,34 @@
     [self.window makeKeyAndVisible];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 200, 20)];
     titleLabel.text = @"我是标题";
-    titleLabel.backgroundColor = SYThemeValueForKey(Title_BG_Color);
-    titleLabel.textColor = SYThemeValueForKey(Title_Color);
+    titleLabel.backgroundColor = SYThemeColor(Title_BG_Color);
+    titleLabel.textColor = SYThemeColor(Title_Color);
     titleLabel.font = SYThemeFont(FirstFont);
     [self.window addSubview:titleLabel];
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 200, 20)];
     contentLabel.text = @"我是内容";
-    contentLabel.backgroundColor = SYThemeValueForKey(Content_BG_Color);
-    contentLabel.textColor = SYThemeValueForKey(Content_Color);
+    contentLabel.backgroundColor = SYThemeColor(Content_BG_Color);
+    contentLabel.textColor = SYThemeColor(Content_Color);
     [self.window addSubview:contentLabel];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 110, 30, 30)];
-    [imageView setImageWithName:SYThemeValueForKey(Image_First)];
+    [imageView setImageWithName:SYThemeImage(Image_First)];
     [self.window addSubview:imageView];
 
     UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(50, 110, 80, 30)];
-    [imageView1 setImageWithName:SYThemeValueForKey(Image_Test) stretchLeft:30 stretchTop:20];
+    [imageView1 setImageWithName:SYThemeImage(Image_Test) stretchLeft:30 stretchTop:20];
     [self.window addSubview:imageView1];
 
     UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 150, 30, 30)];
-    [button1 setImageWithName:SYThemeValueForKey(Image_Second) forState:UIControlStateNormal];
+    [button1 setImageWithName:SYThemeImage(Image_Second) forState:UIControlStateNormal];
     [self.window addSubview:button1];
 
     UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 80, 30)];
-    [button2 setResizeCenterBackgroundImageWithName:SYThemeValueForKey(Image_Test) forState:UIControlStateNormal];
-    [button2 setBackgroundImageWithName:SYThemeValueForKey(Image_Test1) stretchLeft:30 stretchTop:20 forState:UIControlStateHighlighted];
+    [button2 setResizeCenterBackgroundImageWithName:SYThemeImage(Image_Test) forState:UIControlStateNormal];
+    [button2 setBackgroundImageWithName:SYThemeImage(Image_Test1) stretchLeft:30 stretchTop:20 forState:UIControlStateHighlighted];
     [button2 setTitle:@"test" forState:UIControlStateNormal];
-    [button2 theme_setTitleColor:SYThemeValueForKey(Title_Color) forState:UIControlStateNormal];
-    [button2 theme_setTitleColor:SYThemeValueForKey(Title_BG_Color) forState:UIControlStateHighlighted];
+    [button2 theme_setTitleColor:SYThemeColor(Title_Color) forState:UIControlStateNormal];
+    [button2 theme_setTitleColor:SYThemeColor(Title_BG_Color) forState:UIControlStateHighlighted];
     [self.window addSubview:button2];
 
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, 110, 100, 30)];
@@ -77,7 +77,7 @@
         }];
     }];
 
-    [segmentedControl setTintColor:SYThemeValueForKey(Title_Color)];
+    [segmentedControl setTintColor:SYThemeColor(Title_Color)];
 
     return YES;
 }

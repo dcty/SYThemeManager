@@ -23,6 +23,8 @@
 
 #define SYThemeDidChanged @"SYThemeDidChanged"
 
+
+
 //通过 key 获取 值
 #define SYThemeValueForKey(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
 #define SYThemeColor(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
