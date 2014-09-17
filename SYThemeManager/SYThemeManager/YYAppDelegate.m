@@ -91,11 +91,11 @@
 {
     if (segmentedControl.selectedSegmentIndex == 0)
     {
-        [SYThemeManager sharedSYThemeManager].themePath = @"/Users/Ivan/Documents/workspace/Github/SYThemeManager/SYThemeManager/SYThemeManager/FirstTheme.json";
+        [SYThemeManager sharedSYThemeManager].themePath = [[NSBundle mainBundle] pathForResource:@"FirstTheme" ofType:@"json"];
     }
     else
     {
-        [SYThemeManager sharedSYThemeManager].themePath = @"/Users/Ivan/Documents/workspace/Github/SYThemeManager/SYThemeManager/SYThemeManager/SecondTheme.json";
+        [SYThemeManager sharedSYThemeManager].themePath = [[NSBundle mainBundle] pathForResource:@"SecondTheme" ofType:@"json"];
     }
 }
 

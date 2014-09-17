@@ -159,10 +159,10 @@ static SYThemeManager *_sharedSYThemeManager = nil;
         self.cacheViews = [[NSMutableDictionary alloc] init];
         self.syThemeImageQueue = dispatch_queue_create("com.xixiaoyou.themeImage", NULL);
         [self registerInject];
-//        self.themePath = [[NSUserDefaults standardUserDefaults] stringForKey:SY_THEME_PATH];
+        self.themePath = [[NSUserDefaults standardUserDefaults] stringForKey:SY_THEME_PATH];
         if (!_themePath)
         {
-            self.themePath = @"/Users/Ivan/Documents/workspace/Github/SYThemeManager/SYThemeManager/SYThemeManager/FirstTheme.json";
+            self.themePath = [[NSBundle mainBundle] pathForResource:@"FirstTheme" ofType:@"json"];
         }
         [self themeChanged];
     }
