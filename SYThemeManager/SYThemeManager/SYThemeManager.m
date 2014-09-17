@@ -159,10 +159,10 @@ static SYThemeManager *_sharedSYThemeManager = nil;
         self.cacheViews = [[NSMutableDictionary alloc] init];
         self.syThemeImageQueue = dispatch_queue_create("com.xixiaoyou.themeImage", NULL);
         [self registerInject];
-        self.themePath = [[NSUserDefaults standardUserDefaults] stringForKey:SY_THEME_PATH];
+//        self.themePath = [[NSUserDefaults standardUserDefaults] stringForKey:SY_THEME_PATH];
         if (!_themePath)
         {
-            self.themePath = [[NSFileManager defaultManager] pathForResource:@"FirstTheme.json"];
+            self.themePath = @"/Users/Ivan/Documents/workspace/Github/SYThemeManager/SYThemeManager/SYThemeManager/FirstTheme.json";
         }
         [self themeChanged];
     }
@@ -251,7 +251,15 @@ static SYThemeManager *_sharedSYThemeManager = nil;
 {
     @synchronized (_cacheViews)
     {
-        NSString *key = [self themeKeyOfValue:value];
+        NSString *key = nil;
+        if ([keyPath isEqualToString:THEME_IMAGE])
+        {
+            key = value;
+        }
+        else
+        {
+            key = [self themeKeyOfValue:value];
+        }
         if (key)
         {
             NSMutableArray *array = [self arrayOfKey:key];
@@ -398,7 +406,7 @@ static SYThemeManager *_sharedSYThemeManager = nil;
     UIImageView *imageView = (UIImageView *) weak.ref;
     if ([weak.keyPath isEqualToString:THEME_IMAGE])
     {
-        [imageView setImageWithName:[self themeValueForKey:key] stretchLeft:imageView.stretchLeft stretchTop:imageView.stretchTop];
+        [imageView setImageWithName:key stretchLeft:imageView.stretchLeft stretchTop:imageView.stretchTop];
     }
     else if ([weak.keyPath isEqualToString:THEME_BACKGROUNDCOLOR])
     {
@@ -428,4 +436,17 @@ static SYThemeManager *_sharedSYThemeManager = nil;
         [button theme_setTitleColor:[self themeValueForKey:key] forState:weak.controlState];
     }
 }
+
+- (NSBundle *)themeBundle
+{
+    if ([_themePath rangeOfString:@"First"].location != NSNotFound)
+    {
+        return [NSBundle mainBundle];
+    }
+    else
+    {
+        return [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"night" ofType:@"bundle"]];
+    }
+}
+
 @end

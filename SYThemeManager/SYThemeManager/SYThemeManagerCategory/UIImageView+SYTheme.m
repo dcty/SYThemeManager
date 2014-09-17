@@ -79,7 +79,19 @@ static const char HIGHLIGHTEDSTRETCH_TOP;
     UIImage *image = [[SYThemeImageCache sharedSYThemeImageCache] objectForKey:imageName];
     if (!image)
     {
-        image = [[UIImage alloc] initWithContentsOfFile:imageName];
+        NSString *path = [[[[SYThemeManager sharedSYThemeManager] themeBundle] resourcePath] stringByAppendingPathComponent:imageName];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+             path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:imageName];
+        }
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+            image = [[UIImage alloc] initWithContentsOfFile:path];
+        }
+        else
+        {
+            image = nil;
+        }
         if (cache)
         {
             [[SYThemeImageCache sharedSYThemeImageCache] cacheImage:image forKey:imageName];

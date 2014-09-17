@@ -8,11 +8,6 @@
 #define Title_Color @"Title_Color"
 #define Content_BG_Color @"Content_BG_Color"
 #define Content_Color @"Content_Color"
-#define Image_First @"Image_First"
-#define Image_Second @"Image_Second"
-#define Image_Test @"Image_Test"
-#define Image_Test1 @"Image_Test1"
-#define FirstFont @"FirstFont"
 
 #define THEME_TEXTCOLOR @"textColor"
 #define THEME_BACKGROUNDCOLOR @"backgroundColor"
@@ -26,10 +21,7 @@
 
 
 //通过 key 获取 值
-#define SYThemeValueForKey(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
 #define SYThemeColor(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
-#define SYThemeImage(key) [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
-#define SYThemeFont(key)  [[SYThemeManager sharedSYThemeManager] valueForThemeKey:key]
 
 #import <Foundation/Foundation.h>
 
@@ -46,6 +38,8 @@
 - (NSString *)themeKeyOfValue:(id)value;
 
 - (id)valueForThemeKey:(NSString *)key;
+
+- (NSBundle *)themeBundle;
 
 /**
 *   @brief 监听view，然后根据路径和值来修改 这里的view是弱引用（weak），不用担心crash的问题

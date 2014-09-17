@@ -39,6 +39,8 @@
 		22F63E27A1338CB80CF3C689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22F6395D57C1CDA2390DE638 /* InfoPlist.strings */; };
 		22F63EC809920EAE6C85E900 /* BILib.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63D5FB8C3082EA4747916 /* BILib.m */; };
 		2C81636619ADC46C003274A5 /* FirstTheme副本.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C81636519ADC46C003274A5 /* FirstTheme副本.json */; };
+		2CD5982319C97DFD00739F41 /* night.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CD5982219C97DFD00739F41 /* night.bundle */; };
+		2CD5982619C9897700739F41 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CD5982519C9897700739F41 /* test.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		22F63FA05B558596DCBD74EE /* image_chose_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_chose_up.png; sourceTree = "<group>"; };
 		22F63FB5E94D1B2590A6A21B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C81636519ADC46C003274A5 /* FirstTheme副本.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FirstTheme副本.json"; sourceTree = "<group>"; };
+		2CD5982219C97DFD00739F41 /* night.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = night.bundle; sourceTree = "<group>"; };
+		2CD5982519C9897700739F41 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 		22F63939EDE5DC4D99A4E693 /* SYThemeManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CD5982519C9897700739F41 /* test.jpg */,
+				2CD5982219C97DFD00739F41 /* night.bundle */,
 				2C81636519ADC46C003274A5 /* FirstTheme副本.json */,
 				22F63FE91511773FC671C7D8 /* Supporting Files */,
 				22F632449CFAE8F2B4681A7D /* YYAppDelegate.h */,
@@ -325,12 +331,14 @@
 				22F63064AF158C6B471F5A23 /* Images.xcassets in Resources */,
 				22F63DDF3532BA39BDB3CA42 /* image_chose_bg.png in Resources */,
 				22F638AB3535C8998C60B69B /* image_chose_up@2x.png in Resources */,
+				2CD5982619C9897700739F41 /* test.jpg in Resources */,
 				22F637FA6431CF4A506443F7 /* image_chose_up.png in Resources */,
 				22F638A7F0B5FF18E3FA52CE /* image_chose_bg@2x.png in Resources */,
 				22F6355C105D914185EE743C /* tata_replybg.png in Resources */,
 				22F633DB8AEB620E8A5D4E7A /* tata_replybg@2x.png in Resources */,
 				22F6397836889980FE8BBAA8 /* tata_replybg1.png in Resources */,
 				22F63ABD91F0960595C036BF /* FirstTheme.json in Resources */,
+				2CD5982319C97DFD00739F41 /* night.bundle in Resources */,
 				22F639E61EE52B20F82B6210 /* SecondTheme.json in Resources */,
 				2C81636619ADC46C003274A5 /* FirstTheme副本.json in Resources */,
 			);
